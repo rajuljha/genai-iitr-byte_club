@@ -16,6 +16,6 @@ jobs:
         with:
           scan_mode: "differential"
           scanners: "nomos ojo copyright keyword"
-          from_tag: "v001"
-          to_tag: "v004"
+          from_tag: "v005"
+          to_tag: "v010"
           report_format: "SPDX_JSON"
