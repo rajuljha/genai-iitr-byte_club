@@ -23,4 +23,4 @@ print(f"Detected encoding: {encoding}")
 content = read_file_with_detected_encoding(file_path)
 print("File content:")
 print(content)
-# # # # # # Domment
+# # # # # # # # Domment
