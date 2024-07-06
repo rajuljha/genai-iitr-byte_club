@@ -1,0 +1,21 @@
+name: Check foss-action
+
+on:
+  pull_request:
+
+jobs:
+  compliance_check:
+    runs-on: ubuntu-latest
+    name: Perform Fossology Scan
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+
+      - name: Run foss-action
+        uses: rajuljha/foss-action@v1
+        with:
+          scan-mode: "differential"
+          scanners: "nomos ojo copyright keyword"
+          from_tag: "v003"
+          to_tag: "v004"
+          keyword_conf_file_path: "test_keyword.conf"
