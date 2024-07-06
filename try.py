@@ -1,5 +1,6 @@
 import chardet
 
+
 def detect_encoding(file_path):
     with open(file_path, "rb") as file:
         raw_data = file.read()
@@ -22,3 +23,4 @@ print(f"Detected encoding: {encoding}")
 content = read_file_with_detected_encoding(file_path)
 print("File content:")
 print(content)
+# Domment
