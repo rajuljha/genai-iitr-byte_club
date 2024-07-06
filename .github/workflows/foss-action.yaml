@@ -18,4 +18,4 @@ jobs:
           scanners: "nomos ojo copyright keyword"
           from_tag: "v003"
           to_tag: "v004"
-          keyword_conf_file_path: "test_keyword.conf"
+          # keyword_conf_file_path: "test_keyword.conf"
