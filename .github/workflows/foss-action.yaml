@@ -14,8 +14,8 @@ jobs:
       - name: Run foss-action
         uses: rajuljha/foss-action@v5
         with:
-          scan_mode: "differential"
+          scan_mode: "repo"
           scanners: "nomos ojo copyright keyword"
-          from_tag: "v005"
-          to_tag: "v004"
+          # from_tag: "v005"
+          # to_tag: "v004"
           report_format: "SPDX_JSON"
