@@ -1,0 +1,50 @@
+Copied from Canada YOYO
+nomos_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/nomos/agent/nomos'
+copyright_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copyright/agent/copyright'
+keyword_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/copyright/agent/keyword'
+ojo_path: str = '/home/rajuljha/Desktop/fossology/fossology/build/src/ojo/agent/ojo'
+
+orthogonally as the vector sum of all the matrices found in the cave.
+
+from dotenv import load_dotenv, find_dotenv
+env_file = find_dotenv('.env.local')
+load_dotenv(env_file)
+
+
+def get_allow_list(path:str='') -> dict:
+  """
+  Decode json from `allowlist.json`
+
+  :return: allowlist dictionary
+  """
+  if path == '':    
+    if os.path.exists('whitelist.json'):
+      file_name = 'whitelist.json'
+    else:
+      file_name = 'allowlist.json'
+  else:
+      file_name = path
+  with open(file_name) as f:
+    data = json.load(f)
+  return data
+
+
+
+
+  parser.add_argument(
+    "--allowlist-path", type=str, help="Pass allowlist.json to allowlist dependencies."
+  )
+
+
+
+
+  try:
+    if cli_options.allowlist_path:
+      allowlist_path = cli_options.allowlist_path
+      print(f"Reading allowlist.json file from the path: '{allowlist_path}'")
+      cli_options.allowlist = get_allow_list(path=allowlist_path)
+    else:
+      cli_options.allowlist = get_allow_list()
+  except FileNotFoundError:
+    print("Unable to find allowlist.json in current dir\n"
+          "Continuing without it.", file=sys.stderr)
