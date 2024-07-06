@@ -16,6 +16,6 @@ jobs:
         with:
           scan_mode: "differential"
           scanners: "nomos ojo copyright keyword"
-          from_tag: "v003"
+          from_tag: "v001"
           to_tag: "v004"
-          # keyword_conf_file_path: "test_keyword.conf"
+          report_format: "SPDX_JSON"
