@@ -2,7 +2,8 @@
     "licenses": [
         "GPL-2.0-or-later",
         "GPL-2.0-only",
-        "LGPL-2.1-or-later"
+        "LGPL-2.1-or-later",
+        "LGPL-2.0-only"
     ],
     "exclude": [
         "*/agent_tests/*",
