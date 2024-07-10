@@ -19,5 +19,5 @@ jobs:
           # from_tag: "v005"
           # to_tag: "v004"
           # keyword_conf_file_path: "test_keyword.conf"
-          # report_format: "SPDX_JSON"
+          report_format: "SPDX_JSON"
           # allowlist_file_path: "whitelist.json"
