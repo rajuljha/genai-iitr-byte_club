@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run foss-action
-        uses: rajuljha/foss-action@v5
+        uses: rajuljha/foss-action@v8
         with:
           scan_mode: ""
           scanners: "nomos ojo copyright keyword"
