@@ -1,0 +1,23 @@
+name: Check foss-action
+
+on:
+  pull_request:
+
+jobs:
+  compliance_check:
+    runs-on: ubuntu-latest
+    name: Perform Fossology Scan
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+
+      - name: Run foss-action
+        uses: rajuljha/foss-action@v9
+        with:
+          scan_mode: ""
+          scanners: "nomos ojo copyright keyword"
+          # from_tag: "v005"
+          # to_tag: "v004"
+          # keyword_conf_file_path: "test_keyword.conf"
+          report_format: "SPDX_JSON"
+          # allowlist_file_path: "whitelist.json"
