@@ -12,12 +12,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run foss-action
-        uses: rajuljha/foss-action@v6
+        uses: rajuljha/fossology-action@v1
         with:
           scan_mode: "repo"
           scanners: "nomos ojo copyright keyword"
           # from_tag: "v005"
           # to_tag: "v004"
           # keyword_conf_file_path: "test_keyword.conf"
-          # report_format: "SPDX_YAML"
+          report_format: "SPDX_YAML"
           # allowlist_file_path: "whitelist.json"
