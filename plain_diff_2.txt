@@ -25,6 +25,7 @@ index 1a8f02993..4f19100a2 100755
 +
 +  # Populate tmp dir in unified diff format
 +
-+  # Use the count line_number algorithm to get the line numbers from the substring of file that is created
++  # Use the count line_number algorithm to get the line numbers from the substring of file that is createdma dfjksbf
 +
 +
+ 
