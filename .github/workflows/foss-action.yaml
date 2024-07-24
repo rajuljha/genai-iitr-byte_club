@@ -9,10 +9,10 @@ jobs:
     name: Perform Fossology Scan
     steps:
       - name: Checkout this repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run foss-action
-        uses: rajuljha/fossology-action@v6
+        uses: rajuljha/fossology-action@v7
         with:
           scan_mode: "differential"
           scanners: "nomos ojo copyright keyword"
