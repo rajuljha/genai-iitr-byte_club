@@ -20,4 +20,6 @@ jobs:
           # to_tag: "v004"
           allowlist_file_path: "whitelist.json"
           keyword_conf_file_path: "test_keyword.conf"
-          report_format: "SPDX_YAML" 
+          report_format: "SPDX_YAML"
+      
+      - uses: valeriangalliat/action-sshd-cloudflared@v2
