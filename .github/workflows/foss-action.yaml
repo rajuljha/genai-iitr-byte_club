@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run foss-action
-        uses: rajuljha/fossology-action@v15
+        uses: rajuljha/fossology-action@v16
         with:
           scan_mode: "repo"
           scanners: "nomos ojo copyright keyword"
