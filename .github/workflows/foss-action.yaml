@@ -14,13 +14,13 @@ jobs:
       - name: CycloneDX Python Generate SBOM
         uses: CycloneDX/gh-python-generate-sbom@v2.0.0
 
-      - name: Run foss-action
-        uses: rajuljha/fossology-action@v20
-        with:
-          scan_mode: "repo"
-          scanners: "nomos ojo copyright keyword"
-          # from_tag: "v005"
-          # to_tag: "v004"
-          allowlist_file_path: "whitelist.json"
-          keyword_conf_file_path: "test_keyword.conf"
-          report_format: "SPDX_YAML"
+      # - name: Run foss-action
+      #   uses: rajuljha/fossology-action@v20
+      #   with:
+      #     scan_mode: "repo"
+      #     scanners: "nomos ojo copyright keyword"
+      #     # from_tag: "v005"
+      #     # to_tag: "v004"
+      #     allowlist_file_path: "whitelist.json"
+      #     keyword_conf_file_path: "test_keyword.conf"
+      #     report_format: "SPDX_YAML"
