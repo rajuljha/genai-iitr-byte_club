@@ -13,11 +13,14 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v2
+        uses: rajuljha/foss-action-python@v3
         with: 
-          requirements: True
+          environment: false
+          requirements: true
+          pipenv: false
+          poetry: false
 
-      - name: Test shell
+      - name: Display sbom file path
         run: |
           echo ${{ steps.generate_sbom.outputs.sbom_file_path }}
 
