@@ -11,7 +11,7 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v4
 
-      - uses: valeriangalliat/action-sshd-cloudflared@v1
+      # - uses: valeriangalliat/action-sshd-cloudflared@v1
 
       - name: Debug env vars
         run: |
@@ -25,16 +25,20 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v4
+        uses: rajuljha/foss-action-python@v5
         with: 
           environment: false
           requirements: true
           pipenv: false
           poetry: false
 
-      - name: Display sbom file path
+      - name: Display SBOM file path
+        run: echo "SBOM file path: ${{ env.SBOM_FILE_PATH }}"
+
+      - name: Use SBOM file
         run: |
-          echo ${{ steps.generate_sbom.outputs.sbom_file_path }}
+          # Example command that uses the SBOM file
+          cat ${{ env.SBOM_FILE_PATH }}
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
