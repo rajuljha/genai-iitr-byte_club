@@ -25,21 +25,28 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v5
+        uses: rajuljha/foss-action-python@v6
         with: 
           environment: false
           requirements: true
           pipenv: false
           poetry: false
 
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: sbom
+          path: ${{ env.SBOM_FILE_PATH }}
+
+      - name: Download SBOM artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: sbom
+
       - name: Display SBOM file path
         run: |
-          echo "SBOM file path: ${{ env.SBOM_FILE_PATH }}"
-
-      - name: Use SBOM file
-        run: |
-          # Example command that uses the SBOM file
-          cat ${{ env.SBOM_FILE_PATH }}
+          # Example of using the SBOM file
+          cat sbom/sbom_req.json
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
