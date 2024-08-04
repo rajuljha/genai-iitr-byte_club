@@ -11,6 +11,16 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v4
 
+      - name: Debug env vars
+        run: |
+          echo $INPUT_ENVIRONMENT
+          echo $INPUT_REQUIREMENTS
+          echo $INPUT_PIPENV
+          echo $INPUT_POETRY
+          echo $GITHUB_ACTION
+          echo $GITHUB_WORKSPACE
+          echo #GITHUB_ENV
+
       - name: Generate Python SBOM
         id : generate_sbom
         uses: rajuljha/foss-action-python@v4
