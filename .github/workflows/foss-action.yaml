@@ -11,8 +11,14 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v4
 
-      - name: CycloneDX Python Generate SBOM
-        uses: CycloneDX/gh-python-generate-sbom@v2.0.0
+      - name: Generate Python SBOM
+        uses: rajuljha/foss-action-python@v1
+        with: 
+          environment: True
+
+      - name: Test shell
+        bash: |
+          echo ${{ steps.generate_sbom.outputs.sbom_file_path }}
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
