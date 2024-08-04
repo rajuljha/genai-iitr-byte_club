@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug env vars
-        run: |
+        bash: |
           echo $INPUT_ENVIRONMENT
           echo $INPUT_REQUIREMENTS
           echo $INPUT_PIPENV
