@@ -33,7 +33,8 @@ jobs:
           poetry: false
 
       - name: Display SBOM file path
-        run: echo "SBOM file path: ${{ env.SBOM_FILE_PATH }}"
+        run: |
+          echo "SBOM file path: ${{ env.SBOM_FILE_PATH }}"
 
       - name: Use SBOM file
         run: |
