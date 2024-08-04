@@ -13,7 +13,7 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v3
+        uses: rajuljha/foss-action-python@v4
         with: 
           environment: false
           requirements: true
