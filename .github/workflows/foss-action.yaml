@@ -15,7 +15,7 @@ jobs:
         id : generate_sbom
         uses: rajuljha/foss-action-python@v2
         with: 
-          environment: True
+          requirements: True
 
       - name: Test shell
         run: |
