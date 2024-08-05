@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v12
+        uses: rajuljha/foss-action-python@v15
         with: 
           environment: false
           requirements: true
