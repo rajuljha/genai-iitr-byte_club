@@ -13,40 +13,29 @@ jobs:
 
       # - uses: valeriangalliat/action-sshd-cloudflared@v1
 
-      - name: Debug env vars
-        run: |
-          echo $INPUT_ENVIRONMENT
-          echo $INPUT_REQUIREMENTS
-          echo $INPUT_PIPENV
-          echo $INPUT_POETRY
-          echo $GITHUB_ACTION
-          echo $GITHUB_WORKSPACE
-          echo #GITHUB_ENV
+      # - name: Debug env vars
+      #   run: |
+      #     echo $INPUT_ENVIRONMENT
+      #     echo $INPUT_REQUIREMENTS
+      #     echo $INPUT_PIPENV
+      #     echo $INPUT_POETRY
+      #     echo $GITHUB_ACTION
+      #     echo $GITHUB_WORKSPACE
+      #     echo #GITHUB_ENV
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v7
+        uses: rajuljha/foss-action-python@v8
         with: 
           environment: false
           requirements: true
           pipenv: false
           poetry: false
 
-      - name: Upload SBOM artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: sbom
-          path: ${{ env.SBOM_FILE_PATH }}
-
-      - name: Download SBOM artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: sbom
-
-      - name: Display SBOM file path
+      - name: Use SBOM File
         run: |
-          # Example of using the SBOM file
-          cat sbom/sbom_req.json
+          echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
+          cat "${{ steps.generate_sbom.outputs.sbom_file_path }}"
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
