@@ -25,18 +25,18 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v10
+        uses: rajuljha/foss-action-python@v11
         with: 
           environment: false
           requirements: true
           pipenv: false
           poetry: false
-        env:
-          GITHUB_WORKSPACE: ${{ github.workspace }}
 
       - name: Use SBOM File
         run: |
           echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
+          echo "SBOM file path: ${{ github.workspace }}"
+          ls ${{ github.workspace }}
           cat "${{ steps.generate_sbom.outputs.sbom_file_path }}"
 
       # - name: Run foss-action
