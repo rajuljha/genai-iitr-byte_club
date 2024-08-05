@@ -25,13 +25,10 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v14
-        with: 
-          environment: false
+        uses: rajuljha/foss-action-python@v16
+        with:
           requirements: true
-          pipenv: false
-          poetry: false
-
+      
       - name: Use SBOM File
         run: |
           echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
@@ -49,3 +46,5 @@ jobs:
       #     allowlist_file_path: "whitelist.json"
       #     keyword_conf_file_path: "test_keyword.conf"
       #     report_format: "SPDX_YAML"
+      #     # download_deps: True 
+          # sbom_folder: "${{ github.workspace }}/sbom"
