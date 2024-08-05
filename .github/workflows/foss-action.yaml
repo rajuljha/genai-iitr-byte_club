@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate Python SBOM
         id : generate_sbom
-        uses: rajuljha/foss-action-python@v15
+        uses: rajuljha/foss-action-python@v14
         with: 
           environment: false
           requirements: true
@@ -35,9 +35,9 @@ jobs:
       - name: Use SBOM File
         run: |
           echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
-          echo "SBOM file path: ${{ github.workspace }}/sbom/sbom_py.json"
-          cat "SBOM file path: ${{ github.workspace }}/sbom/sbom_py.json"
-          ls "${{ github.workspace }}/sbom"
+          echo "SBOM file path: "${{ github.workspace }}/sbom_py.json""
+          cat "SBOM file path: "${{ github.workspace }}/sbom_py.json""
+          ls "${{ github.workspace }}"
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
