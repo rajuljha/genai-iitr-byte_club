@@ -31,6 +31,8 @@ jobs:
           requirements: true
           pipenv: false
           poetry: false
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
 
       - name: Use SBOM File
         run: |
