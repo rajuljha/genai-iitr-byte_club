@@ -35,9 +35,9 @@ jobs:
       - name: Use SBOM File
         run: |
           echo "SBOM file path: ${{ steps.generate_sbom.outputs.sbom_file_path }}"
-          echo "SBOM file path: ${{ github.workspace }}"
-          ls ${{ github.workspace }}
-          cat "${{ steps.generate_sbom.outputs.sbom_file_path }}"
+          echo "SBOM file path: ${{ github.workspace }}/sbom/sbom_py.json"
+          cat "SBOM file path: ${{ github.workspace }}/sbom/sbom_py.json"
+          ls "${{ github.workspace }}/sbom"
 
       # - name: Run foss-action
       #   uses: rajuljha/fossology-action@v20
